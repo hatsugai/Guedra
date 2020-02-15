@@ -2,11 +2,11 @@
 
 Concurrent GUI toolkit for OCaml
 
-# Dependencies
+## Dependencies
 
 - ocaml-csp
 
-# Backend
+## Backend
 
-- GTK+
+- GTK+3
 - Direct 2D
