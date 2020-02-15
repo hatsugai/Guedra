@@ -4,7 +4,7 @@ Concurrent GUI toolkit for OCaml
 
 ## Dependencies
 
-- ocaml-csp
+- [ocaml-csp](https://github.com/hatsugai/ocaml-csp)
 
 ## Backend
 
