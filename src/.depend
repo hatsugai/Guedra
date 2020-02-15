@@ -1,0 +1,38 @@
+button.cmo : guedra.cmo
+button.cmx : guedra.cmx
+checklist.cmo : listbox.cmo guedra.cmo
+checklist.cmx : listbox.cmx guedra.cmx
+checklistvs.cmo : vscroll.cmo splitter.cmo scroll.cmo hsplitter.cmo \
+    guedra.cmo checklist.cmo
+checklistvs.cmx : vscroll.cmx splitter.cmx scroll.cmx hsplitter.cmx \
+    guedra.cmx checklist.cmx
+form.cmo : guedra.cmo
+form.cmx : guedra.cmx
+guedra.cmo :
+guedra.cmx :
+hscroll.cmo : scroll.cmo guedra.cmo
+hscroll.cmx : scroll.cmx guedra.cmx
+hsplitter.cmo : splitter.cmo guedra.cmo
+hsplitter.cmx : splitter.cmx guedra.cmx
+listbox.cmo : guedra.cmo
+listbox.cmx : guedra.cmx
+listboxvs.cmo : vscroll.cmo splitter.cmo scroll.cmo listbox.cmo \
+    hsplitter.cmo guedra.cmo
+listboxvs.cmx : vscroll.cmx splitter.cmx scroll.cmx listbox.cmx \
+    hsplitter.cmx guedra.cmx
+scroll.cmo : guedra.cmo
+scroll.cmx : guedra.cmx
+splitter.cmo :
+splitter.cmx :
+staticText.cmo : guedra.cmo
+staticText.cmx : guedra.cmx
+staticTextVs.cmo : vscroll.cmo staticText.cmo splitter.cmo scroll.cmo \
+    hsplitter.cmo guedra.cmo
+staticTextVs.cmx : vscroll.cmx staticText.cmx splitter.cmx scroll.cmx \
+    hsplitter.cmx guedra.cmx
+vscroll.cmo : scroll.cmo guedra.cmo
+vscroll.cmx : scroll.cmx guedra.cmx
+vsplitter.cmo : splitter.cmo guedra.cmo
+vsplitter.cmx : splitter.cmx guedra.cmx
+window.cmo : guedra.cmo
+window.cmx : guedra.cmx
