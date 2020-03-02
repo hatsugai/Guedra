@@ -7,12 +7,12 @@
 #include <caml/callback.h>
 #include "win.h"
 
-static value *proc;
+static const value *proc;
 bool b_calling;
 
 void guedra_init(void)
 {
-    value *init = caml_named_value("guedra init");
+    const value *init = caml_named_value("guedra init");
     proc = caml_named_value("guedra drive");
     b_calling = true;
     {

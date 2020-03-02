@@ -338,7 +338,7 @@ void activate(GtkApplication *app, char **argv)
 
 CAMLprim value guedra_create_window(value vtitle, value vx, value vy, value vw, value vh)
 {
-    char *title = String_val(vtitle);
+    const char *title = String_val(vtitle);
     long x = Long_val(vx);
     long y = Long_val(vy);
     long w = Long_val(vw);
@@ -466,7 +466,7 @@ CAMLprim value make_font(value vsFamily, value vlSlant, value vlWeight, value vd
     res_font *font = (res_font *)malloc(sizeof(res_font));
     res_t *p = res_alloc(RES_TYPE_FONT, font, &font->id);
 
-    char *s = String_val(vsFamily);
+    const char *s = String_val(vsFamily);
     size_t len = strlen(s);
     font->family = malloc(len + 1);
     strcpy(font->family, s);
@@ -530,7 +530,7 @@ CAMLprim value set_font(value vlFont_id)
 
 CAMLprim value guedra_draw_text(value x, value y, value vsText)
 {
-    char *text = String_val(vsText);
+    const char *text = String_val(vsText);
     cairo_move_to(cr, Double_val(x), Double_val(y) + cur_font->extents.ascent);
     cairo_show_text(cr, text);
     return Val_unit;
@@ -626,7 +626,7 @@ CAMLprim value guedra_text_extents(value vs_s)
 {
     CAMLparam1(vs_s);
     CAMLlocal1(v);
-    char *s = String_val(vs_s);
+    const char *s = String_val(vs_s);
     int nsp = 0;
     while (*s == ' ') { s++; nsp++; }
     cairo_text_extents_t extents;
@@ -706,7 +706,7 @@ CAMLprim value imp_delete_surface(value v)
 
 CAMLprim value imp_clipboard_set_text(value vs)
 {
-    char *s = String_val(vs);
+    const char *s = String_val(vs);
     size_t n = caml_string_length(vs);
     GtkClipboard* clipboard = gtk_clipboard_get(GDK_SELECTION_CLIPBOARD);
     gtk_clipboard_set_text(clipboard, s, n);
