@@ -478,7 +478,8 @@ CAMLprim value guedra_draw_rect(value val_x, value val_y, value val_w, value val
     double y = Double_val(val_y);
     double w = Double_val(val_w);
     double h = Double_val(val_h);
-    pRT->DrawRectangle(D2D1::RectF(x, y, x + w, y + h), pBrush, line_width);
+    pRT->DrawRectangle(D2D1::RectF(x, y, x + w, y + h),
+					   pBrush, line_width, strokeStyle);
     return Val_unit;
 }
 
