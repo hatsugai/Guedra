@@ -813,7 +813,7 @@ CAMLprim value imp_delete_surface(value v)
 
 CAMLprim value imp_clipboard_set_text(value vs)
 {
-    char *s = String_val(vs);
+    const char *s = String_val(vs);
     size_t n = caml_string_length(vs);
     return Val_unit;
 }
