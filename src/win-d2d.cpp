@@ -532,7 +532,7 @@ CAMLprim value guedra_select_font(value vsFamily, value vlSlant, value vlWeight,
 
 CAMLprim value guedra_show_text(value x, value y, value vsText) {
     wchar_t *text = convert_string(String_val(vsText));
-    D2D1_RECT_F r = D2D1::RectF(Double_val(x), Double_val(y), 10000, 10000);
+    D2D1_RECT_F r = D2D1::RectF(Double_val(x), Double_val(y), 1000000, 1000000);
     pRT->DrawText(text, wcslen(text), pTextFormat, &r, pBrush);
     return Val_unit;
 }
@@ -645,8 +645,8 @@ CAMLprim value guedra_text_extents(value vsText)
         (text,
          wcslen(text),
          pTextFormat,
-         10000,                 // The width of the layout box.
-         10000,                 // The height of the layout box.
+         1000000,                 // The width of the layout box.
+         1000000,                 // The height of the layout box.
          &pTextLayout);
     DWRITE_TEXT_METRICS m;
     pTextLayout->GetMetrics(&m);
@@ -677,7 +677,7 @@ CAMLprim value delete_font(value vlFont_id)
 CAMLprim value guedra_draw_text(value x, value y, value vsText)
 {
     wchar_t *text = convert_string(String_val(vsText));
-    D2D1_RECT_F r = D2D1::RectF(Double_val(x), Double_val(y), 10000, 10000);
+    D2D1_RECT_F r = D2D1::RectF(Double_val(x), Double_val(y), 1000000, 1000000);
     pRT->DrawText(text, wcslen(text), pTextFormat, &r, pBrush);
     return Val_unit;
 }
